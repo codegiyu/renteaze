@@ -1,11 +1,10 @@
-import type { Config } from 'tailwindcss'
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './layout/**/*.{js,ts,jsx,tsx,mdx}',
-    './sections/**/*.{js,ts,jsx,tsx,mdx}'
+    "./app/**/*.{js,jsx,ts,tsx}",
+    "./components/**/*.{js,jsx,ts,tsx}",
+    "./layout/**/*.{js,jsx,ts,tsx}",
+    "./sections/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -45,7 +44,7 @@ const config: Config = {
         outfit: ["'Poppins'", "sans-serif"]
       },
       spacing: {
-        cont1350: "calc((100% - 1350px) / 2)"
+        cont1300: "calc((100% - 1300px) / 2)"
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -55,4 +54,4 @@ const config: Config = {
   },
   plugins: [],
 }
-export default config
+
