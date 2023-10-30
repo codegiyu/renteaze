@@ -1,5 +1,5 @@
 import React from 'react';
-import { contactBarData } from '@/constants';
+import { contactBarData } from '@/constants/generalData';
 import OutlineButton from '@/components/buttons/OutlineButton';
 import BlockButton from '@/components/buttons/BlockButton';
 import ContactDataSingle from '@/components/ContactDataSingle';
@@ -14,7 +14,7 @@ const ContactBar = () => {
                 ))}
             </div>
             <div className='w-fit flex items-center gap-4'>
-                <OutlineButton text='Login' width='[90px]' styles={{width: "90px"}} />
+                <OutlineButton text='Login' width='full' link="/login" styles={{width: "90px"}} />
                 <BlockButton text='Sign up' colour='red' width='[90px]' styles={{width: "90px"}} />
             </div>
         </section>

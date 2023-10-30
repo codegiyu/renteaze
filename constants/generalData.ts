@@ -13,3 +13,22 @@ export const contactBarData: ContactDataSingleProps[] = [
         type: "mail"
     }
 ]
+
+export const userCategories: SelectOptionProps[] = [
+    {
+        text: "Agent",
+        value: "Agent",
+    },
+    {
+        text: "Developer",
+        value: "Developer",
+    },
+    {
+        text: "Landlord",
+        value: "Landlord",
+    },
+    {
+        text: "User",
+        value: "User",
+    },
+]

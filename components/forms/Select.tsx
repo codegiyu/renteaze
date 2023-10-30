@@ -3,7 +3,7 @@ import Image from "next/image";
 import caret from "../../public/icons/chevron-down.svg";
 import { useRef, useState } from "react";
 
-const SelectWithPicture: React.FC<Select> = ({
+const Select: React.FC<Select> = ({
     name = "",
     value,
     label = "",
@@ -27,7 +27,6 @@ const SelectWithPicture: React.FC<Select> = ({
     const [isFocused, setIsFocused] = useState<boolean>(false);
     const [isHovered, setIsHovered] = useState<boolean>(false);
     const [optionsOpen, setOptionsOpen] = useState<boolean>(false);
-    const [selectedPic, setSelectedPic] = useState<string>(optionsArray.find((item) => item.value === value)?.image || "");
     const [dropdownPosition, setDropdownPosition] = useState<"top"|"bottom">("bottom");
     const selectRef = useRef<HTMLDivElement>(null);
 
@@ -41,7 +40,7 @@ const SelectWithPicture: React.FC<Select> = ({
         const target = e.currentTarget as HTMLDivElement;
         const coordinates = target.getBoundingClientRect();
         const { bottom } = coordinates;
-        console.log(coordinates);
+        console.log(coordinates)
 
         if (bottom + 300 > window.innerHeight) {
             setDropdownPosition("top");
@@ -68,8 +67,6 @@ const SelectWithPicture: React.FC<Select> = ({
         
         if (select && newValue) {
             select.value = newValue;
-            const newImage = optionsArray.find((item) => item.value === newValue)?.image || ""
-            setSelectedPic(newImage);
 
             toggleOptions();
             
@@ -112,14 +109,7 @@ const SelectWithPicture: React.FC<Select> = ({
             ) : null
             }
             <div className="select" tabIndex={1}>
-                <div className={`header picture-select ${borders ? "has-borders" : ""}`} ref={selectRef} onClick={handleClick} >
-                    <Image 
-                        src={selectedPic}
-                        alt=""
-                        width={24}
-                        height={18}
-                        loading="eager"
-                    />
+                <div className={`header ${borders ? "has-borders" : ""}`} ref={selectRef} onClick={handleClick}>
                     <span className={`select-text ${value ? "" : "placeholder"}`}>
                         {optionsArray.find((item: SelectOptionProps) => item.value === value)?.text || placeholder}
                     </span>
@@ -171,17 +161,8 @@ const SelectWithPicture: React.FC<Select> = ({
                                 onKeyUp={handleKeyup}
                                 className={`option ${item.value === value ? "bg-light-3 text-white" : "text-gray-9"}`}
                             >
-                                <div className="p-1 flex items-center gap-3">
-                                    <Image 
-                                        src={item.image || ""}
-                                        alt=""
-                                        width={24}
-                                        height={18}
-                                        loading="eager"
-                                    />
-                                    <p className="flex-1">{item.text}</p>
-                                </div>
-                            </div> 
+                                <div className="p-1">{item.text}</div>
+                            </div>
                         ))
                     ) : null}
                 </datalist>
@@ -200,4 +181,4 @@ const SelectWithPicture: React.FC<Select> = ({
     )
 }
 
-export default SelectWithPicture;
+export default Select;

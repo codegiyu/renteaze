@@ -8,16 +8,16 @@ declare global {
     }
 
     interface GeneralInputProps<T> {
-        name: string;
-        value: string;
+        name?: string;
+        value?: string;
         label?: string;
         labelStyles?: CSSProperties;
         inputStyles?: CSSProperties;
-        changeHandler?: (e?: React.ChangeEvent<T>) => void;
-        blurHandler?: (e?: React.FocusEvent<T>) => void;
-        focusHandler?: (e?: React.FocusEvent<T>) => void;
-        mouseEnterHandler?: (e?: React.MouseEvent<T>) => void;
-        mouseLeaveHandler?: (e?: React.MouseEvent<T>) => void;
+        changeHandler?: (e: React.ChangeEvent<T>) => void;
+        blurHandler?: (e: React.FocusEvent<T>) => void;
+        focusHandler?: (e: React.FocusEvent<T>) => void;
+        mouseEnterHandler?: (e: React.MouseEvent<T>) => void;
+        mouseLeaveHandler?: (e: React.MouseEvent<T>) => void;
         disabled?: boolean;
         errMsg?: string;
         infoMsg?: string;
@@ -26,6 +26,7 @@ declare global {
     interface GeneralButtonProps {
         type?: "button" | "submit" | "reset";
         fullWidth?: boolean;
+        link?: string;
         clickHandler?: () => void;
         width?: string;
         text: string;
@@ -35,9 +36,10 @@ declare global {
         textStyles?: CSSProperties;
     }
 
-    interface InputProps extends GeneralInputProps<HTMLInputElement> {
-        type: HTMLInputTypeAttribute;
-        placeholder: string;
+    interface InputProps extends GeneralInputProps<HTMLInputElement|HTMLSelectElement> {
+        type?: HTMLInputTypeAttribute;
+        placeholder?: string;
+        borders?
     }
 
     interface SelectOptionProps {
@@ -46,8 +48,25 @@ declare global {
         image?: string;
     }
 
-    interface SelectWithPictureProps extends GeneralInputProps<HTMLSelectElement> {
+    interface Select extends GeneralInputProps<HTMLInputElement|HTMLSelectElement> {
+        placeholder?: string;
         optionsArray: SelectOptionProps[];
+        borders?: boolean;
+        absolute?: boolean;
+    }
+
+    interface CompoundPhoneInputProps {
+        phoneCodeName: string; 
+        phoneCodeValue: string; 
+        phoneCodeOptions: SelectOptionProps[];
+        phoneName: string; 
+        phoneValue: string; 
+        placeholder?: string; 
+        label?: string;
+        labelStyles?: CSSProperties;
+        changeHandler: (e: React.ChangeEvent<T>) => void; 
+        disabled?: boolean; 
+        errMsg?: string;
     }
 
     interface ColoredButtonProps extends GeneralButtonProps {

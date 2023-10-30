@@ -1,11 +1,11 @@
-// import infoIcon from "../../assets/icons/info-icon.svg";
 // import errorIcon from "../../assets/icons/error-icon.svg";
 import { useState } from "react";
 
 const Input: React.FC<InputProps> = ({
     type = "text",
-    name,
+    name = "",
     value,
+    borders = true,
     placeholder = "",
     label = "",
     labelStyles = {},
@@ -24,24 +24,24 @@ const Input: React.FC<InputProps> = ({
     const [isFocused, setIsFocused] = useState<boolean>(false);
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
-    const handleFocus = () => {
+    const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
         setIsFocused(true);
-        focusHandler ? focusHandler() : null;
+        focusHandler ? focusHandler(e) : null;
     }
 
-    const handleBlur = () => {
+    const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
         setIsFocused(false);
-        blurHandler ? blurHandler() : null;
+        blurHandler ? blurHandler(e) : null;
     }
 
-    const handleMouseEnter = () => {
+    const handleMouseEnter = (e: React.MouseEvent<HTMLInputElement>) => {
         setIsHovered(true);
-        mouseEnterHandler ? mouseEnterHandler() : null;
+        mouseEnterHandler ? mouseEnterHandler(e) : null;
     }
 
-    const handleMouseLeave = () => {
+    const handleMouseLeave = (e: React.MouseEvent<HTMLInputElement>) => {
         setIsHovered(false);
-        mouseLeaveHandler ? mouseLeaveHandler() : null;
+        mouseLeaveHandler ? mouseLeaveHandler(e) : null;
     }
 
     return (
@@ -58,7 +58,7 @@ const Input: React.FC<InputProps> = ({
             <input
                 type={type}
                 name={name}
-                className="input"
+                className={`input ${borders ? "has-borders" : ""}`}
                 value={value}
                 disabled={disabled}
                 style={inputStyles}
@@ -70,16 +70,7 @@ const Input: React.FC<InputProps> = ({
                 placeholder={placeholder}
                 {...props}
             />
-            {/* {infoMsg ? (
-                <div className="input-info flex items-center gap-2">
-                    <img src={infoIcon} alt="" className="" />
-                    <span className="text-sm lg:text-base text-inp-info">
-                        {infoMsg}
-                    </span>
-                </div>
-            ) : null
-            }
-            {errMsg ? (
+            {/* {errMsg ? (
                 <div className="input-error flex items-center gap-2">
                     <img src={errorIcon} alt="" className="" />
                     <span className="text-sm lg:text-base text-error">

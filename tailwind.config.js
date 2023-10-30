@@ -13,8 +13,8 @@ module.exports = {
         "compli-1": "#79D601",
         "compli-2": "#F15756",
 
-        "bg-col-1": "#F2F6FC",
-        "bg-col-2": "#F1F1F1",
+        "col-1": "#F2F6FC",
+        "col-2": "#F1F1F1",
 
         "light-1": "#CCCDE7",
         "light-2": "#999BCF",
@@ -29,6 +29,7 @@ module.exports = {
         "gray-5": "#666666",
         "gray-6": "#999999",
         "gray-7": "#CCCCCC",
+        "gray-8": "#999999",
         "gray-9": "#6A6A6A",
 
         "error-1": "#FF7070"
@@ -38,6 +39,7 @@ module.exports = {
         "s2": "0px 2px 4px 0px rgba(0, 0, 0, 0.25)",
         "s3": "2px 2px 6px 0px rgba(0, 0, 0, 0.25)",
         "s4": "-1px 2px 4px -1px rgba(0, 0, 0, 0.25)",
+        "er-1dp": "0px 1px 2px 0px rgba(0, 0, 0, 0.25)"
         // "fh-inner": "0px 0px 4px 0px rgba(31, 41, 55, 0.15) inset",
       },
       fontFamily: {

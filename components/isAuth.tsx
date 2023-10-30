@@ -10,7 +10,6 @@ export default function isAuth(Component: any) {
     const auth = true;
 
     useEffect(() => {
-        console.log("I ran")
       if (!auth) {
         redirect("/login");
       }
