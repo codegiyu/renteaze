@@ -6,7 +6,6 @@ import React, { useState, useEffect } from "react";
 import { userCategories } from "@/constants/generalData";
 import { countries } from "@/constants/countries";
 import Select from "@/components/forms/Select";
-import SelectWithPicture from "@/components/forms/SelectWithPicture";
 import CompoundPhoneInput from "@/components/forms/CompoundPhoneInput";
 import BlockButton from "@/components/buttons/BlockButton";
 import google from "@/public/icons/google.svg";
@@ -16,7 +15,11 @@ import RoundedButton from "@/components/buttons/RoundedButton";
 import Link from "next/link";
 
 interface Values {
-  random: string;
+  firstname: string;
+  lastname: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
   select: string;
   pic: string;
   phoneCode: string;
@@ -25,7 +28,11 @@ interface Values {
 
 const Signup = () => {
   const [values, setValues] = useState<Values>({
-    random: "",
+    firstname: "",
+    lastname: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
     select: "",
     pic: "+234",
     phoneCode: "+234",
@@ -55,24 +62,56 @@ const Signup = () => {
       <section className="container-120 h-full">
         <section className="py-10 grid gap-10">
           <div className="w-full md:w-[478px] mx-auto px-8 py-[1.375rem] grid gap-10 bg-col-1">
-            <h2 className="text-xl text-center font-[600] max-w-sm mx-auto mb-4">
-              Sign in or Sign up to create an account
-            </h2>
+            <h2 className="text-xl font-[600] mb-4">Register</h2>
+            <div className="flex items-center gap-4">
+              <Input
+                name="firstname"
+                value={values.firstname}
+                changeHandler={handleChange}
+                placeholder="First name"
+              />
+              <Input
+                name="lastname"
+                value={values.lastname}
+                changeHandler={handleChange}
+                placeholder="Last name"
+              />
+            </div>
             <Input
-              name="random"
-              value={values.random}
+              name="email"
+              value={values.email}
               changeHandler={handleChange}
-              placeholder="Enter your email address here"
-              label="Email Address"
+              placeholder="Email address"
             />
-
-            <RoundedButton
-              text="Continue with email"
-              colour="blue"
-              width="[90px]"
-              link="/"
+            <Input
+              name="password"
+              value={values.password}
+              changeHandler={handleChange}
+              placeholder="Password"
             />
-
+            <Input
+              name="confirmPassword"
+              value={values.confirmPassword}
+              changeHandler={handleChange}
+              placeholder="Confirm Password"
+            />
+            <CompoundPhoneInput
+              phoneCodeName="phoneCode"
+              phoneCodeValue={values.phoneCode}
+              phoneCodeOptions={phoneCodesData}
+              phoneName="phone"
+              phoneValue={values.phone}
+              changeHandler={handleChange}
+              placeholder="***********"
+            />
+            <Select
+              name="select"
+              optionsArray={userCategories}
+              value={values.select}
+              changeHandler={handleChange}
+              placeholder="Categories"
+              borders={true}
+            />
             <p className="text-subtitle1-2 text-center">
               Or use one of these options
             </p>
@@ -91,7 +130,7 @@ const Signup = () => {
               />
               <OutlineButton
                 link="/login"
-                text=""  
+                text=""
                 rightIcon={facebook}
                 styles={{
                   width: "60px",
@@ -113,31 +152,19 @@ const Signup = () => {
               </Link>
               statement
             </div>
-            <Select
-              name="select"
-              optionsArray={userCategories}
-              value={values.select}
-              changeHandler={handleChange}
-              placeholder="Categories"
-              borders={true}
+
+            <RoundedButton
+              text="Create account"
+              colour="blue"
+              width="[90px]"
+              link="/"
             />
-            <SelectWithPicture
-              name="pic"
-              optionsArray={phoneCodesData}
-              value={values.pic}
-              changeHandler={handleChange}
-              placeholder="Country Phone Code"
-              borders={true}
-            />
-            <CompoundPhoneInput
-              phoneCodeName="phoneCode"
-              phoneCodeValue={values.phoneCode}
-              phoneCodeOptions={phoneCodesData}
-              phoneName="phone"
-              phoneValue={values.phone}
-              changeHandler={handleChange}
-              placeholder="***********"
-            />
+            <p className="text-sm font-medium text-center max-w-sm">
+              Already registered?{" "}
+              <Link href="/login" className="text-pri-blue">
+                Sign in
+              </Link>
+            </p>
           </div>
         </section>
       </section>

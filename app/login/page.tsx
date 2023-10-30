@@ -2,13 +2,7 @@
 
 import Input from "@/components/forms/Input";
 import AuthLayout from "@/layout/AuthLayout";
-import React, { useState, useEffect } from "react";
-import { userCategories } from "@/constants/generalData";
-import { countries } from "@/constants/countries";
-import Select from "@/components/forms/Select";
-import SelectWithPicture from "@/components/forms/SelectWithPicture";
-import CompoundPhoneInput from "@/components/forms/CompoundPhoneInput";
-import BlockButton from "@/components/buttons/BlockButton";
+import React, { useState } from "react";
 import google from "@/public/icons/google.svg";
 import facebook from "@/public/icons/facebook.svg";
 import OutlineButton from "@/components/buttons/OutlineButton";
@@ -41,14 +35,6 @@ const Login = () => {
 
     setValues((prevState: Values) => ({ ...prevState, [name]: value }));
   };
-
-  const phoneCodesData: SelectOptionProps[] = Object.values(countries).map(
-    (item: any) => ({
-      text: item.phone[0],
-      value: item.phone[0],
-      image: item.image,
-    })
-  );
 
   return (
     <AuthLayout>
