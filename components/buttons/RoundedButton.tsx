@@ -26,7 +26,7 @@ const RoundedButton: React.FC<ColoredButtonProps> = ({
       >
         <button type={type} className={className} style={styles} {...props}>
           {leftIcon ? (
-            <div className="relative w-4 h-4 lg:w-8 lg:h-8">
+            <div className="relative w-8 h-8">
               <Image src={leftIcon} alt="" fill className="object-cover" />
             </div>
           ) : null}
@@ -34,7 +34,7 @@ const RoundedButton: React.FC<ColoredButtonProps> = ({
             {text}
           </span>
           {rightIcon ? (
-            <div className="relative w-4 h-4 lg:w-8 lg:h-8">
+            <div className="relative w-8 h-8">
               <Image src={rightIcon} alt="" fill className="object-cover" />
             </div>
           ) : null}
@@ -51,7 +51,7 @@ const RoundedButton: React.FC<ColoredButtonProps> = ({
         {...props}
       >
         {leftIcon ? (
-          <div className="relative w-4 h-4 lg:w-8 lg:h-8">
+          <div className="relative w-8 h-8">
             <Image src={leftIcon} alt="" fill className="object-cover" />
           </div>
         ) : null}
@@ -59,7 +59,7 @@ const RoundedButton: React.FC<ColoredButtonProps> = ({
           {text}
         </span>
         {rightIcon ? (
-          <div className="relative w-4 h-4 lg:w-8 lg:h-8">
+          <div className="relative w-8 h-8">
             <Image src={rightIcon} alt="" fill className="object-cover" />
           </div>
         ) : null}

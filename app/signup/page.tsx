@@ -61,7 +61,7 @@ const Signup = () => {
     <AuthLayout>
       <section className="container-120 h-full">
         <section className="py-10 grid gap-10">
-          <div className="w-full md:w-[478px] mx-auto px-8 py-[1.375rem] grid gap-10 bg-col-1">
+          <div className="w-full md:w-[600px] mx-auto px-8 py-[1.375rem] grid gap-10 bg-col-1">
             <h2 className="text-xl font-[600] mb-4">Register</h2>
             <div className="flex items-center gap-4">
               <Input
@@ -141,7 +141,7 @@ const Signup = () => {
                 }}
               />
             </div>
-            <div className="border-y-2 py-3 text-sm font-medium text-center max-w-sm">
+            <div className="border-y-2 py-3 text-sm font-medium text-center ">
               By signing in or creating an account, you agree with our{" "}
               <Link href="/" className="text-pri-blue">
                 Terms & conditions
@@ -159,7 +159,7 @@ const Signup = () => {
               width="[90px]"
               link="/"
             />
-            <p className="text-sm font-medium text-center max-w-sm">
+            <p className="text-sm font-medium text-center max-w-sm mx-auto">
               Already registered?{" "}
               <Link href="/login" className="text-pri-blue">
                 Sign in
