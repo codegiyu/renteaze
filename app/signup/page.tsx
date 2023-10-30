@@ -23,7 +23,7 @@ interface Values {
   phone: string;
 }
 
-const Login = () => {
+const Signup = () => {
   const [values, setValues] = useState<Values>({
     random: "",
     select: "",
@@ -54,7 +54,7 @@ const Login = () => {
     <AuthLayout>
       <section className="container-120 h-full">
         <section className="py-10 grid gap-10">
-          <div className="w-full md:w-[478px] mx-auto px-8 py-[1.375rem] grid gap-6 bg-col-1">
+          <div className="w-full md:w-[478px] mx-auto px-8 py-[1.375rem] grid gap-10 bg-col-1">
             <h2 className="text-xl text-center font-[600] max-w-sm mx-auto mb-4">
               Sign in or Sign up to create an account
             </h2>
@@ -70,7 +70,7 @@ const Login = () => {
               text="Continue with email"
               colour="blue"
               width="[90px]"
-              link="/login"
+              link="/"
             />
 
             <p className="text-subtitle1-2 text-center">
@@ -87,11 +87,11 @@ const Login = () => {
                   gap: "0",
                   border: "0.3px solid #666666",
                   borderRadius: "4px",
-                  background: "#ffffff",
                 }}
               />
               <OutlineButton
-                text=""
+                link="/login"
+                text=""  
                 rightIcon={facebook}
                 styles={{
                   width: "60px",
@@ -99,7 +99,6 @@ const Login = () => {
                   gap: "0",
                   border: "0.3px solid #666666",
                   borderRadius: "4px",
-                  background: "#ffffff",
                 }}
               />
             </div>
@@ -114,6 +113,31 @@ const Login = () => {
               </Link>
               statement
             </div>
+            <Select
+              name="select"
+              optionsArray={userCategories}
+              value={values.select}
+              changeHandler={handleChange}
+              placeholder="Categories"
+              borders={true}
+            />
+            <SelectWithPicture
+              name="pic"
+              optionsArray={phoneCodesData}
+              value={values.pic}
+              changeHandler={handleChange}
+              placeholder="Country Phone Code"
+              borders={true}
+            />
+            <CompoundPhoneInput
+              phoneCodeName="phoneCode"
+              phoneCodeValue={values.phoneCode}
+              phoneCodeOptions={phoneCodesData}
+              phoneName="phone"
+              phoneValue={values.phone}
+              changeHandler={handleChange}
+              placeholder="***********"
+            />
           </div>
         </section>
       </section>
@@ -121,4 +145,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Signup;

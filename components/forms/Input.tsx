@@ -50,7 +50,7 @@ const Input: React.FC<InputProps> = ({
             ${disabled ? "is-disabled" : ""} ${isHovered ? "is-hovered" : ""}`}
         >
             {label ? (
-                <span className="input-label" style={labelStyles}>
+                <span className="input-label font-[600]" style={labelStyles}>
                     {label}
                 </span>
             ) : null

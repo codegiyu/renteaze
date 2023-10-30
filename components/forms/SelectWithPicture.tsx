@@ -41,7 +41,7 @@ const SelectWithPicture: React.FC<Select> = ({
         const target = e.currentTarget as HTMLDivElement;
         const coordinates = target.getBoundingClientRect();
         const { bottom } = coordinates;
-        console.log(coordinates);
+        // console.log(coordinates);
 
         if (bottom + 300 > window.innerHeight) {
             setDropdownPosition("top");
