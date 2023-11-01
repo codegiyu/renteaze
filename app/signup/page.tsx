@@ -45,8 +45,11 @@ const Signup = () => {
     const target = e.target as HTMLInputElement | HTMLSelectElement;
     const name = target.name;
     const value = target.value;
+    console.log(target,name, value);
+    
 
     setValues((prevState: Values) => ({ ...prevState, [name]: value }));
+    console.log(values);
   };
 
   const phoneCodesData: SelectOptionProps[] = Object.values(countries).map(
