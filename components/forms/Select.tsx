@@ -70,17 +70,17 @@ const Select: React.FC<Select> = ({
 
             toggleOptions();
             
-           if (changeHandler) {
-             const target = select as HTMLSelectElement | HTMLInputElement;
+       if (changeHandler) {
+         const target = { name, value: newValue } as
+           | HTMLInputElement
+           | HTMLSelectElement;
 
-             const event: React.ChangeEvent<
-               HTMLSelectElement | HTMLInputElement
-             > = {
-               target,
-             } as React.ChangeEvent<HTMLSelectElement | HTMLInputElement>;
+         const event = {
+           target,
+         } as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
 
-             changeHandler(event);
-           }
+         changeHandler(event);
+       }
 
         }
         toggleOptions();
