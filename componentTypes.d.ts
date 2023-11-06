@@ -79,3 +79,9 @@ declare global {
         type: "mail" | "tel" | "others";
     }
 }
+
+export type SideProps = {
+  title: string;
+  icon?: string | StaticImport;
+  path: string;
+};
