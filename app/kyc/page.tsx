@@ -131,6 +131,7 @@ const KYC = () => {
             <EditInput
               label="3. Email"
               placeholder="Email Address"
+              type="email"
               btnText="Edit"
             />
             <Select
