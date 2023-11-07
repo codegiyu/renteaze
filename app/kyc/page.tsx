@@ -17,6 +17,7 @@ import Select from "@/components/forms/Select";
 import { gender } from "@/constants/generalData";
 import CompoundPhoneInput from "@/components/forms/CompoundPhoneInput";
 import { countries } from "@/constants/countries";
+import RoundedButton from "@/components/buttons/RoundedButton";
 
 const sideLists = [
   {
@@ -166,6 +167,13 @@ const KYC = () => {
               borders={false}
               absolute={true}
             /> */}
+            <RoundedButton
+              colour="blue"
+              text="Save"
+              styles={{
+                width: "183px",
+              }}
+            />
           </div>
         </div>
       </section>
