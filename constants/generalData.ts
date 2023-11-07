@@ -32,3 +32,13 @@ export const userCategories: SelectOptionProps[] = [
         value: "User",
     },
 ]
+export const gender: SelectOptionProps[] = [
+    {
+        text: "Male",
+        value: "Male",
+    },
+    {
+        text: "Female",
+        value: "Female",
+    },
+]

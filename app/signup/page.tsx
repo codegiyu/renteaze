@@ -2,12 +2,11 @@
 
 import Input from "@/components/forms/Input";
 import AuthLayout from "@/layout/AuthLayout";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { userCategories } from "@/constants/generalData";
 import { countries } from "@/constants/countries";
 import Select from "@/components/forms/Select";
 import CompoundPhoneInput from "@/components/forms/CompoundPhoneInput";
-import BlockButton from "@/components/buttons/BlockButton";
 import google from "@/public/icons/google.svg";
 import facebook from "@/public/icons/facebook.svg";
 import OutlineButton from "@/components/buttons/OutlineButton";
@@ -45,11 +44,9 @@ const Signup = () => {
     const target = e.target as HTMLInputElement | HTMLSelectElement;
     const name = target.name;
     const value = target.value;
-    console.log(target,name, value);
-    
-
+    // console.log(target,name, value);
     setValues((prevState: Values) => ({ ...prevState, [name]: value }));
-    console.log(values);
+    // console.log(values);
   };
 
   const phoneCodesData: SelectOptionProps[] = Object.values(countries).map(
