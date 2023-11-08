@@ -62,7 +62,7 @@ interface Values {
 
 const Dashboard = () => {
   const fileInputRef = useRef<HTMLInputElement>(null);
-
+const [displayImg, setDisplayImg] = useState("")
   const [values, setValues] = useState<Values>({
     firstname: "",
     lastname: "",
@@ -80,6 +80,16 @@ const Dashboard = () => {
       fileInputRef.current.click();
     }
   };
+
+   const handleImageChange = (e) => {
+     const image = e.target.files[0];
+     if (image && image.type.startsWith("image/")) {
+      //  setProfileImage(image);
+       setDisplayImg(URL.createObjectURL(image));
+     } else {
+     console.error("Please select a valid image file.");
+     }
+   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -225,6 +235,7 @@ const Dashboard = () => {
                     onClick={handleEditClick}
                     alt="click to add an image"
                   />
+                  {displayImg && <Image src={displayImg} alt="image-1" />}
                   <input
                     type="file"
                     accept="image/*"
