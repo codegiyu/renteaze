@@ -32,7 +32,8 @@ export const userCategories: SelectOptionProps[] = [
         value: "User",
     },
 ]
-export const gender: SelectOptionProps[] = [
+
+export const genderCategory: SelectOptionProps[] = [
     {
         text: "Male",
         value: "Male",
@@ -42,3 +43,33 @@ export const gender: SelectOptionProps[] = [
         value: "Female",
     },
 ]
+
+export const propertyCategory: SelectOptionProps[] = [
+  {
+    text: "Commercial property for rent",
+    value: "Commercial property for rent",
+  },
+  {
+    text: "House & Apartment for",
+    value: "House & Apartment for",
+  },
+  {
+    text: "Shop for rent",
+    value: "Shop for rent",
+  },
+  {
+    text: "Office letting & lease",
+    value: "Office letting & lease",
+  },
+];
+
+export const booleanCategory: SelectOptionProps[] = [
+  {
+    text: "Yes",
+    value: "Yes",
+  },
+  {
+    text: "No",
+    value: "No",
+  },
+];

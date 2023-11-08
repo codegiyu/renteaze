@@ -14,7 +14,7 @@ import profile from "../../public/icons/profile.png";
 import camera from "../../public/icons/camera.svg";
 import EditInput from "@/components/forms/EditInput";
 import Select from "@/components/forms/Select";
-import { gender } from "@/constants/generalData";
+import { genderCategory } from "@/constants/generalData";
 import CompoundPhoneInput from "@/components/forms/CompoundPhoneInput";
 import { countries } from "@/constants/countries";
 import RoundedButton from "@/components/buttons/RoundedButton";
@@ -137,7 +137,7 @@ const KYC = () => {
             <Select
               label="4. Gender"
               name="select"
-              optionsArray={gender}
+              optionsArray={genderCategory}
               value={values.select}
               changeHandler={handleChange}
               placeholder="Male/Female"
