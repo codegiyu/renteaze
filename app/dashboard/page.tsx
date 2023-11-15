@@ -61,8 +61,10 @@ interface Values {
 }
 
 const Dashboard = () => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-const [displayImg, setDisplayImg] = useState("")
+  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  // const [profileImage, setProfileImage] = useState([]);
+  const [displayImg, setDisplayImg] = useState("");
+  // const displayImg: [] = [];
   const [values, setValues] = useState<Values>({
     firstname: "",
     lastname: "",
@@ -81,15 +83,17 @@ const [displayImg, setDisplayImg] = useState("")
     }
   };
 
-   const handleImageChange = (e) => {
-     const image = e.target.files[0];
-     if (image && image.type.startsWith("image/")) {
-      //  setProfileImage(image);
-       setDisplayImg(URL.createObjectURL(image));
-     } else {
-     console.error("Please select a valid image file.");
-     }
-   };
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const image = e.target.files?.[0];
+
+    if (image && image.type.startsWith("image/")) {
+      // setProfileImage(image);
+      setDisplayImg(URL.createObjectURL(image));
+      // displayImg.push(URL.createObjectURL(image));
+    } else {
+      console.error("Please select a valid image file.");
+    }
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -235,7 +239,7 @@ const [displayImg, setDisplayImg] = useState("")
                     onClick={handleEditClick}
                     alt="click to add an image"
                   />
-                  {displayImg && <Image src={displayImg} alt="image-1" />}
+                  {/* {displayImg && <Image src={displayImg} alt="image-1" />} */}
                   <input
                     type="file"
                     accept="image/*"
@@ -249,6 +253,7 @@ const [displayImg, setDisplayImg] = useState("")
                     text="Add video"
                     styles={{
                       width: "183px",
+                      border: "0.6px solid #999BCF",
                     }}
                   />
                   <OutlineButton
@@ -257,6 +262,7 @@ const [displayImg, setDisplayImg] = useState("")
                       width: "183px",
                       color: "white",
                       backgroundColor: "#999BCF",
+                      border: "0"
                     }}
                   />
                 </div>
