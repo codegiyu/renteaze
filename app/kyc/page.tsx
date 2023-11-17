@@ -71,6 +71,7 @@ const KYC = () => {
     phoneCode: "+234",
     phone: "",
   });
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -82,6 +83,7 @@ const KYC = () => {
     setValues((prevState: Values) => ({ ...prevState, [name]: value }));
     // console.log(values);
   };
+  
   const phoneCodesData: SelectOptionProps[] = Object.values(countries).map(
     (item: any) => ({
       text: item.phone[0],

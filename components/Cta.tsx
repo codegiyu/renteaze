@@ -5,7 +5,7 @@ import RoundedButton from "./buttons/RoundedButton";
 
 const Cta = () => {
   return (
-    <section className="bg-compli-1 py-10 px-[120px] flex items-center justify-center">
+    <section className="bg-compli-1 py-10 px-[120px] flex items-center justify-center mb-8">
       <div className="text-center flex flex-col items-center gap-8 w-full">
         <div className="text-dark-1 space-y-2">
           <h4 className="text-body1-1">
