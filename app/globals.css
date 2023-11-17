@@ -30,6 +30,13 @@ html {
     rgb(var(--background-start-rgb));
 }
 
+/* .about-hero {
+  background-image: url("../public/icons/about-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
 @layer components {
   /* TYPOGRAPHY */
 
@@ -349,3 +356,4 @@ html {
     @apply px-9 md:px-16 xl:px-[7.5rem] 2xl:px-cont1300;
   }
 }
+
