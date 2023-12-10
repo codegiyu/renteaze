@@ -8,7 +8,7 @@ import help from "../../public/icons/account-lock.svg";
 import power from "../../public/icons/power-standby.svg";
 import settings from "../../public/icons/cog.svg";
 import user from "../../public/icons/card-account-phone.svg";
-import { SideProps } from "@/componentTypes";
+// import { SideProps } from "@/componentTypes";
 import Image from "next/image";
 import profile from "../../public/icons/profile.png";
 import camera from "../../public/icons/camera.svg";

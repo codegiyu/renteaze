@@ -6,7 +6,7 @@ import alert from "../../public/icons/bell-alert.svg";
 import help from "../../public/icons/account-lock.svg";
 import power from "../../public/icons/power-standby.svg";
 import settings from "../../public/icons/cog.svg";
-import { SideProps } from "@/componentTypes";
+// import { SideProps } from "@/componentTypes";
 import Image from "next/image";
 import profile from "../../public/icons/profile.png";
 import list from "../../public/icons/playlist-edit.svg";

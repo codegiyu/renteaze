@@ -1,4 +1,4 @@
-import { SideProps } from "@/componentTypes";
+// import { SideProps } from "@/componentTypes";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";

@@ -81,10 +81,24 @@ declare global {
     text: string;
     type: "mail" | "tel" | "others";
   }
+
+  interface SideProps {
+    title: string;
+    icon?: string | StaticImport;
+    path: string;
+  };
+
+  interface NavLinkProps {
+    text: string;
+    path: string;
+  }
+
+  interface NavLinksGroupProps {
+    linksArr: NavLinkProps[];
+  }
+
+  interface HeaderProps {
+    linksArr?: NavLinkProps[];
+  }
 }
 
-export type SideProps = {
-  title: string;
-  icon?: string | StaticImport;
-  path: string;
-};

@@ -6,9 +6,9 @@ const MainLayout: React.FC<ComponentWithChildrenOnly> = ({children}) => {
 
     return (
       <>
-          <ContactBar />
-          <AuthHeader />
-          {children}
+        <ContactBar />
+        <AuthHeader />
+        {children}
       </>
     )
 }

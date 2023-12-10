@@ -2,6 +2,7 @@ import React from 'react';
 import ContactBar from './ContactBar';
 import AuthHeader from './AuthHeader';
 import AuthBottomHeader from './AuthBottomHeader';
+import { authBottomLinks } from '@/constants/navLinksData';
 
 const AuthLayout: React.FC<ComponentWithChildrenOnly> = ({children}) => {
 
@@ -12,7 +13,7 @@ const AuthLayout: React.FC<ComponentWithChildrenOnly> = ({children}) => {
         <section>
             {children}
         </section>
-        <AuthBottomHeader />
+        <AuthBottomHeader linksArr={authBottomLinks} />
     </main>
   )
 }
