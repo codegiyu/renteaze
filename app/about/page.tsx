@@ -32,7 +32,7 @@ const About = () => {
               We are a passionate team of real estate experts, technology
               enthusiasts, and housing advocates who understand the importance
               of a place you can truly call home. With years of collective
-              experience in the industry, we've witnessed firsthand the
+              experience in the industry, we&apos;ve witnessed firsthand the
               life-changing impact that the right housing can have on
               individuals and communities
             </p>
