@@ -40,7 +40,7 @@ const Select: React.FC<Select> = ({
         const target = e.currentTarget as HTMLDivElement;
         const coordinates = target.getBoundingClientRect();
         const { bottom } = coordinates;
-        console.log(coordinates)
+        // console.log(coordinates)
 
         if (bottom + 300 > window.innerHeight) {
             setDropdownPosition("top");
@@ -70,12 +70,18 @@ const Select: React.FC<Select> = ({
 
             toggleOptions();
             
-            if (changeHandler) {
-                // Call the changeHandler with the new value
-                changeHandler({
-                    target: select as unknown as React.ChangeEvent<HTMLSelectElement>,
-                });
-            }
+       if (changeHandler) {
+         const target = { name, value: newValue } as
+           | HTMLInputElement
+           | HTMLSelectElement;
+
+         const event = {
+           target,
+         } as React.ChangeEvent<HTMLInputElement | HTMLSelectElement>;
+
+         changeHandler(event);
+       }
+
         }
         toggleOptions();
     }

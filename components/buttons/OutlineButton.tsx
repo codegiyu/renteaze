@@ -26,7 +26,7 @@ const OutlineButton: React.FC<GeneralButtonProps> = ({
                 {...props}
             >
                 {leftIcon ? (
-                    <div className="w-4 h-4 lg:w-8 lg:h-8">
+                    <div className="relative w-8 h-8">
                         <Image
                             src={leftIcon}
                             alt=""
@@ -39,7 +39,7 @@ const OutlineButton: React.FC<GeneralButtonProps> = ({
                     {text}
                 </span>
                 {rightIcon ? (
-                    <div className="w-4 h-4 lg:w-8 lg:h-8">
+                    <div className="relative w-8 h-8">
                     <Image
                         src={rightIcon}
                         alt=""
@@ -60,7 +60,7 @@ const OutlineButton: React.FC<GeneralButtonProps> = ({
             {...props}
         >
             {leftIcon ? (
-                <div className="w-4 h-4 lg:w-8 lg:h-8">
+                <div className="relative w-8 h-8">
                     <Image
                         src={leftIcon}
                         alt=""
@@ -73,7 +73,7 @@ const OutlineButton: React.FC<GeneralButtonProps> = ({
                 {text}
             </span>
             {rightIcon ? (
-                 <div className="w-4 h-4 lg:w-8 lg:h-8">
+                 <div className="relative w-8 h-8">
                  <Image
                      src={rightIcon}
                      alt=""
