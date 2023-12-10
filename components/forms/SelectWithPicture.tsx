@@ -173,7 +173,7 @@ const SelectWithPicture: React.FC<Select> = ({
         </div>
         <datalist
           className={
-            `options-dropdown ${optionsOpen ? "grid" : "hidden"}
+            `options-dropdown select-options-dropdown ${optionsOpen ? "grid" : "hidden"}
                     ${
                       absolute
                         ? `absolute ${
