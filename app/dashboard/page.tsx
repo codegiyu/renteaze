@@ -19,6 +19,7 @@ import ContactBar from "@/layout/ContactBar";
 import Input from "@/components/forms/Input";
 import OutlineButton from "@/components/buttons/OutlineButton";
 import addImg from "../../public/icons/add-img.svg";
+import UploadPhotoThumbnail from "@/components/UploadPhotoThumbnail";
 
 const sideLists = [
   {
@@ -61,9 +62,11 @@ interface Values {
 }
 
 const Dashboard = () => {
-  const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   // const [profileImage, setProfileImage] = useState([]);
   const [displayImg, setDisplayImg] = useState("");
+  const [photoFiles, setPhotoFiles] = useState<File[]>([]);
+  const [photosDisplay, setPhotosDisplay] = useState<string[]>([]);
   // const displayImg: [] = [];
   const [values, setValues] = useState<Values>({
     firstname: "",
@@ -82,6 +85,29 @@ const Dashboard = () => {
       fileInputRef.current.click();
     }
   };
+
+  const addPhotos = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const filesArr: FileList | null = e.target.files;
+    console.log(filesArr);
+
+    if (filesArr) {
+      for (let i = 0; i < filesArr.length; i++) {
+        setPhotoFiles((prevState) => {
+          const files = [...prevState];
+          files.push(filesArr[i]);
+
+          return files;
+        })
+        
+        setPhotosDisplay((prevState) => {
+          const files = [...prevState];
+          files.push( URL.createObjectURL(filesArr[i]) );
+
+          return files;
+        })
+      }
+    }
+  }
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const image = e.target.files?.[0];
@@ -224,29 +250,46 @@ const Dashboard = () => {
                   as possible will make your Ads more attractive to prospects.
                 </small>
               </div>
-              <div className="photo">
-                <h4 className="font-medium">Add photo</h4>
-                <p className="text-error-1 text-xs">
-                  Add at least 4 photos for this category.
-                </p>
-                <p className="text-error-1 text-xs">
-                  Supported format are .jpg, .gif and .png, 5MB max. Image width
-                  must be at least: 600 px
-                </p>
-                <div className="flex cursor-pointer">
-                  <Image
-                    src={addImg}
-                    onClick={handleEditClick}
-                    alt="click to add an image"
-                  />
-                  {/* {displayImg && <Image src={displayImg} alt="image-1" />} */}
-                  <input
-                    type="file"
-                    accept="image/*"
-                    ref={fileInputRef}
-                    style={{ display: "none" }}
-                    // onChange={handleImageChange}
-                  />
+              <div className="photo w-full">
+                <h4 className="text-body2-1">Add photo</h4>
+                <div className="grid mt-2 mb-6">
+                  <p className="text-error-1 text-caption-2">
+                    Add at least 4 photos for this category.
+                  </p>
+                  <p className="text-error-1 text-caption-2">
+                    Supported format are .jpg, .gif and .png, 5MB max. Image width
+                    must be at least: 600 px
+                  </p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-fit cursor-pointer">
+                    <Image
+                      src={addImg}
+                      onClick={handleEditClick}
+                      alt="click to add an image"
+                      width={70}
+                      height={70}
+                    />
+                    {/* {displayImg && <Image src={displayImg} alt="image-1" />} */}
+                    <input
+                      type="file"
+                      accept="image/*"
+                      multiple={true}
+                      ref={fileInputRef}
+                      onChange={addPhotos}
+                      style={{ display: "none" }}
+                      // onChange={handleImageChange}
+                    />
+                  </div>
+                  {photosDisplay.map((item, idx) => (
+                    <UploadPhotoThumbnail 
+                      key={idx}
+                      img={item}
+                      index={idx}
+                      setPhotoFiles={setPhotoFiles}
+                      setPhotosDisplay={setPhotosDisplay}
+                    />
+                  ))}
                 </div>
                 <div className="flex my-3">
                   <OutlineButton

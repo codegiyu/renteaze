@@ -100,5 +100,12 @@ declare global {
   interface HeaderProps {
     linksArr?: NavLinkProps[];
   }
+
+  interface UploadPhotoThumbnailProps {
+    index: number;
+    img: string;
+    setPhotoFiles: React.Dispatch<React.SetStateAction<File[]>>;
+    setPhotosDisplay: React.Dispatch<React.SetStateAction<string[]>>;
+  }
 }
 

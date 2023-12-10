@@ -7,10 +7,12 @@ import Link from "next/link";
 export default function Home() {
   return (
     <MainLayout>
-      <main className="">
-        <Cta />
+      <>
+        <main className="">
+          <Cta />
+        </main>
         <Footer />
-      </main>
+      </>
     </MainLayout>
   );
 }
