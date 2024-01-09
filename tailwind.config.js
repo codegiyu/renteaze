@@ -43,7 +43,8 @@ module.exports = {
         // "fh-inner": "0px 0px 4px 0px rgba(31, 41, 55, 0.15) inset",
       },
       fontFamily: {
-        outfit: ["'Poppins'", "sans-serif"]
+        poppins: ["'Poppins'", "sans-serif"],
+        openSans: ["'Open Sans'", "sans-serif"],
       },
       spacing: {
         cont1300: "calc((100% - 1300px) / 2)"

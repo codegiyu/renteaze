@@ -56,7 +56,6 @@ const Login = () => {
               text="Continue with email"
               colour="blue"
               width="[90px]"
-              link="/login"
             />
 
             <p className="text-subtitle1-2 text-center">

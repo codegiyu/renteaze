@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -354,6 +356,11 @@ html {
 
   .container-120-36-mob {
     @apply px-9 md:px-16 xl:px-[7.5rem] 2xl:px-cont1300;
+  }
+
+  /* Masonry grid container */
+  .grid-sizer {
+    @apply w-full md:w-1/2 lg:w-1/3;
   }
 }
 
