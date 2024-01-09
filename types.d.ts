@@ -3,6 +3,14 @@
 export {};
 
 declare global {
+    // GLobal State Types
+    interface AuthSlice {
+
+    }
+
+    type AppStoreState = AuthSlice
+
+
     interface HeroProps {
         imageSrc?: string;
         text?: string;
