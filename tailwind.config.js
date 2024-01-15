@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        mob: "475px"
+      },
       colors: {
         "pri-blue": "#010587",
         "compli-1": "#79D601",

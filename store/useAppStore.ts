@@ -8,7 +8,7 @@ const useAppStore = create<AppStoreState>()(
             ...createAuthSlice(...a)
         }),
         {
-            name: "appStore",
+            name: "renteazeStore",
             storage: createJSONStorage(() => localStorage)
         }
     )
