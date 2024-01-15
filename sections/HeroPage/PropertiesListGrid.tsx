@@ -1,6 +1,6 @@
 "use client";
-import { useEffect } from "react";
-import Isotope from "isotope-layout";
+// import { useEffect } from "react";
+// import Isotope from "isotope-layout";
 import { allProperties } from "@/constants/allProperties";
 import PropertyCardPortrait from "@/components/PropertyCardPortrait";
 
@@ -17,7 +17,7 @@ const PropertiesListGrid: React.FC = () => {
 
     return (
       <section className="container-120">
-        <div id="masonry" className="w-full masonry-container columns-3">
+        <div id="masonry" className="w-full masonry-container sm:columns-2 lg:columns-3">
           {allProperties.map((item, idx) => (
             <PropertyCardPortrait 
               key={idx}
@@ -33,7 +33,7 @@ const PropertiesListGrid: React.FC = () => {
               condition={item.condition}
             />
           ))}
-          <div className='grid-sizer'></div>
+          {/* <div className='grid-sizer'></div> */}
         </div>
       </section>
     )

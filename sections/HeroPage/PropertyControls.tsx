@@ -1,11 +1,12 @@
 import RoundedButton from "@/components/buttons/RoundedButton"
+import BoxSelect from "@/components/forms/BoxSelect"
 
 
 const PropertyControls: React.FC = () => {
 
     return (
-        <section className="container-120">
-            <div className="w-[90%] md:w-[76%] p-4 grid gap-4 bg-white mx-auto shadow-s2 translate-y-[-50%] relative z-[3]">
+        <section className="container-120 grid gap-10 my-10 lg:gap-0 lg:my-0">
+            <div className="w-[100%] lg:w-[76%] p-4 grid gap-4 bg-white mx-auto shadow-s2 lg:translate-y-[-50%] relative z-[3]">
                 <div className="grid gap-3">
                     <div className="flex gap-4 items-center">
                         <span className="text-dark-1 text-subtitle1-2 ">Filter</span>
@@ -14,12 +15,24 @@ const PropertyControls: React.FC = () => {
                         </svg>
                     </div>
                     <div className="flex gap-3 flex-wrap">
-                        <div className="w-full md:w-[200px] h-10 bg-blue-500"></div>
-                        <div className="w-full md:w-[200px] h-10 bg-blue-500"></div>
-                        <div className="w-full md:w-[200px] h-10 bg-blue-500"></div>
-                        <div className="w-full md:w-[156px] h-10 bg-blue-500"></div>
-                        <div className="w-full md:w-[156px] h-10 bg-blue-500"></div>
-                        <div className="w-full md:w-[156px] h-10 bg-blue-500"></div>
+                        <div className="w-full sm:w-[200px] lg:w-[24%]">
+                            <BoxSelect optionsArray={[]} absolute placeholder="All categories" />
+                        </div>
+                        <div className="w-full sm:w-[200px] lg:w-[24%]">
+                            <BoxSelect optionsArray={[]} absolute placeholder="All states" />
+                        </div>
+                        <div className="w-full sm:w-[200px] lg:w-[24%]">
+                            <BoxSelect optionsArray={[]} absolute placeholder="All localities" />
+                        </div>
+                        <div className="w-full sm:w-[156px] lg:w-[20%]">
+                            <BoxSelect optionsArray={[]} absolute placeholder="Bedrooms" />
+                        </div>
+                        <div className="w-full sm:w-[156px] lg:w-[20%]">
+                            <BoxSelect optionsArray={[]} absolute placeholder="Min price" />
+                        </div>
+                        <div className="w-full sm:w-[156px] lg:w-[20%]">
+                            <BoxSelect optionsArray={[]} absolute placeholder="Max price" />
+                        </div>
                     </div>
                 </div>
                 <div className="w-full md:w-[300px]">
@@ -32,8 +45,8 @@ const PropertyControls: React.FC = () => {
                 </div>
             </div>
             <div 
-                className="w-full bg-white py-6 px-10 md:px-20 lg:px-[120px] border-gray-7 border-[0.2px] shadow-s2 flex 
-                justify-end gap-8 translate-y-[-100%]"
+                className="w-full hidden bg-white py-6 px-10 md:px-20 lg:px-[120px] border-gray-7 border-[0.2px] shadow-s2 lg:flex 
+                justify-end gap-8 lg:translate-y-[-100%]"
             >
                 <button className="w-fit bg-transparent hover:scale-105">
                     <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">

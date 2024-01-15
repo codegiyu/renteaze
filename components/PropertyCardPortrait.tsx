@@ -25,7 +25,7 @@ const PropertyCardPortrait: React.FC<PropertyListSingle> = ({
 }) => {
 
     return (
-        <div className="w-full h-fit  py-4 px-5 masonry-item">
+        <div className="w-full h-fit py-4 px-0 md:px-5 masonry-item">
             <div className="w-full h-fit rounded-xl overflow-hidden shadow-s1">
                 <figure className="w-full p-0 relative">
                     <Image src={image} alt={`property-${id}`} className="w-full h-auto aspect-auto" />
