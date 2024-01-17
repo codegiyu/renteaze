@@ -62,7 +62,7 @@ const Signup = () => {
       <section className="container-120 h-full">
         <section className="py-10 grid gap-10">
           <div className="w-full md:w-[600px] mx-auto px-8 py-[1.375rem] grid gap-10 bg-col-1">
-            <h2 className="text-xl font-[600] mb-4">Register</h2>
+            <h2 className="text-xl font-semibold mb-4">Register</h2>
             <div className="grid md:flex items-center gap-10 md:gap-4">
               <Input
                 name="firstname"
@@ -157,7 +157,6 @@ const Signup = () => {
               text="Create account"
               colour="blue"
               width="[90px]"
-              link="/"
             />
             <p className="text-sm font-medium text-center max-w-sm mx-auto">
               Already registered?{" "}

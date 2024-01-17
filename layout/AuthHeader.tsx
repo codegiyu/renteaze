@@ -5,7 +5,7 @@ import React from 'react'
 const AuthHeader: React.FC<HeaderProps> = ({linksArr = []}) => {
   return (
     <section className='xl:container-120'>
-      <section className='bg-pri-blue py-0 px-0 md:py-2 md:px-4 lg:py-3 lg:px-6 flex items-center justify-between'>
+      <section className='bg-pri-blue py-0 px-0 md:py-2 md:px-4 lg:py-3 lg:px-12 xl:px-6 flex items-center justify-between'>
         <Link href="/">
           <h1 className='p-4 text-subtitle1-1 sm:text-h5-2 text-white'>Renteaze Properties</h1>
         </Link>

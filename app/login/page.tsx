@@ -41,7 +41,7 @@ const Login = () => {
       <section className="container-120 h-full">
         <section className="py-10 grid gap-10">
           <div className="w-full md:w-[478px] mx-auto px-8 py-[1.375rem] grid gap-6 bg-col-1">
-            <h2 className="text-xl text-center font-[600] max-w-sm mx-auto mb-4">
+            <h2 className="text-xl text-center font-semibold max-w-sm mx-auto mb-4">
               Sign in
             </h2>
             <Input
