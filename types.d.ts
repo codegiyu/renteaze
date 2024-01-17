@@ -1,5 +1,7 @@
 // Global State types
 
+import { StaticImageData } from "next/image";
+
 export {};
 
 declare global {
@@ -15,6 +17,18 @@ declare global {
         imageSrc?: string;
         text?: string;
         overlayOpacity?: string;  // value between "00" and "ff"
+    }
+
+    interface PageIntroProps {
+        heading: string;
+        text: string;
+    }
+
+    interface ImageTextFlexProps {
+        image: string|StaticImageData;
+        imageAlt?: string;
+        text: string;
+        reversed?: boolean;
     }
 
     type PropertyGrade = "PREMIUM" | "STANDARD" | "CLASSIC";

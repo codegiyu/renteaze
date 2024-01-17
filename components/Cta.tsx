@@ -16,10 +16,10 @@ const Cta = () => {
           </p>
         </div>
         <div className="flex flex-col gap-4 justify-center items-center w-full max-w-xl mx-auto md:flex-row">
-          <Input type="email" placeholder="enter your email" />
+          <Input type="email" placeholder="Enter your email" />
           <RoundedButton
             colour="blue"
-            text="send"
+            text="Send"
             styles={{
               width: "50%",
             }}
