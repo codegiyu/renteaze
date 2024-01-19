@@ -7,8 +7,8 @@ import ContactDataSingle from "@/components/ContactDataSingle";
 const ContactBar = () => {
   return (
     <section className="container-120 bg-white">
-      <section className="p-3 flex items-start justify-between">
-        <div className="w-fit flex gap-3 items-center p-[10px]">
+      <section className="p-3 grid gap-5 md:flex items-start justify-between">
+        <div className="w-full sm:w-fit flex flex-wrap gap-3 items-center p-[10px]">
           {contactBarData.map((item: ContactDataSingleProps, idx: number) => (
             <ContactDataSingle
               key={idx}

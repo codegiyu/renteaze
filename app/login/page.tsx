@@ -41,8 +41,8 @@ const Login = () => {
       <section className="container-120 h-full">
         <section className="py-10 grid gap-10">
           <div className="w-full md:w-[478px] mx-auto px-8 py-[1.375rem] grid gap-6 bg-col-1">
-            <h2 className="text-xl text-center font-[600] max-w-sm mx-auto mb-4">
-              Sign in or Sign up to create an account
+            <h2 className="text-xl text-center font-semibold max-w-sm mx-auto mb-4">
+              Sign in
             </h2>
             <Input
               name="random"
@@ -56,7 +56,6 @@ const Login = () => {
               text="Continue with email"
               colour="blue"
               width="[90px]"
-              link="/login"
             />
 
             <p className="text-subtitle1-2 text-center">
@@ -91,15 +90,21 @@ const Login = () => {
             </div>
             <div className="border-y-2 py-3 text-sm font-medium text-center max-w-sm">
               By signing in or creating an account, you agree with our{" "}
-              <Link href="/" className="text-pri-blue">
+              <Link href="*" className="text-pri-blue">
                 Terms & conditions
               </Link>{" "}
               and{" "}
-              <Link href="/" className="text-pri-blue">
+              <Link href="*" className="text-pri-blue">
                 Privacy{" "}
               </Link>
               statement
             </div>
+            <p className="text-sm font-medium text-center max-w-sm mx-auto">
+              Not registered?{" "}
+              <Link href="/signup" className="text-pri-blue">
+                Sign up
+              </Link>
+            </p>
           </div>
         </section>
       </section>
