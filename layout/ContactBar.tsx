@@ -1,10 +1,16 @@
+// "use client";
 import React from "react";
 import { contactBarData } from "@/constants/generalData";
 import OutlineButton from "@/components/buttons/OutlineButton";
 import BlockButton from "@/components/buttons/BlockButton";
 import ContactDataSingle from "@/components/ContactDataSingle";
+import { auth } from "@/app/_server/utils";
 
 const ContactBar = () => {
+  if (auth.isAuthenticated()) {
+    return null;
+  }
+
   return (
     <section className="container-120 bg-white">
       <section className="p-3 grid gap-5 md:flex items-start justify-between">

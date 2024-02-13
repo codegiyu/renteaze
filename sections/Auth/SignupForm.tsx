@@ -63,54 +63,54 @@ const SignupForm: React.FC = () => {
     };
 
     const checkFormValid = useCallback(() => {
-        if (
-            !values.firstName
-            || !values.lastName
-            || !values.email
-            || !values.phone
-            || !values.role
-            || !values.password 
-            || values.password.length < 6
-            || values.password.length > 25
-            || !values.confirmPassword
-        ) {
-            console.log({valid: false, values});
-            setFormValid(false);
-        } else {
-            console.log({valid: true, values});
-            setFormValid(true);
-        }
+      if (
+        !values.firstName
+        || !values.lastName
+        || !values.email
+        || !values.phone
+        || !values.role
+        || !values.password 
+        || values.password.length < 6
+        || values.password.length > 25
+        || !values.confirmPassword
+      ) {
+        console.log({valid: false, values});
+        setFormValid(false);
+      } else {
+        console.log({valid: true, values});
+        setFormValid(true);
+      }
     }, [values])
 
     const handleCreateAccount = async (e: React.FormEvent) => {
-        e.preventDefault();
-        
-        if (!formValid) {
-            error("Please fill all form fields before submitting");
-            console.log("Please fill all form fields before submitting");
-            return;
-        }
+      e.preventDefault();
+      
+      if (!formValid) {
+          error("Please fill all form fields before submitting");
+          console.log("Please fill all form fields before submitting");
+          return;
+      }
 
-        if (values.password !== values.confirmPassword) {
-            error("Password and Confirm Password do not match");
-            console.log("Password and Confirm Password do not match");
-            return;
-        }
+      if (values.password !== values.confirmPassword) {
+          error("Password and Confirm Password do not match");
+          console.log("Password and Confirm Password do not match");
+          return;
+      }
 
-        setRegLoading(true);
+      setRegLoading(true);
 
-        const payload: INewUser = {
-            firstName: values.firstName,
-            lastName: values.lastName,
-            email: values.email,
-            password: values.password,
-            phone: values.phoneCode + values.phone,
-            role: values.role,
+      const payload: INewUser = {
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          password: values.password,
+          phone: values.phoneCode + values.phone,
+          role: values.role,
 
-        }
-        console.log({payload})
-        await register(payload);
-        setRegLoading(false);
+      }
+      console.log({payload})
+      await register(payload);
+      setRegLoading(false);
     }
 
     useEffect(() => {
@@ -139,6 +139,7 @@ const SignupForm: React.FC = () => {
             </div>
             <Input
               name="email"
+              type="email"
               value={values.email}
               changeHandler={handleChange}
               placeholder="Email address"

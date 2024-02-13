@@ -65,7 +65,9 @@ function useUserService(): IUserService {
         },
         getCurrent: async () => {
             if (!currentUser) {
-                userStore.setState({ currentUser: await fetch.get('/api/users/current') });
+                const currentUser = await fetch.get('/api/users/current');
+                console.log({ currentUser });
+                userStore.setState({ currentUser });
             }
         },
         create: async (user) => {

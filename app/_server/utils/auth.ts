@@ -19,5 +19,6 @@ function verifyToken() {
     const token = cookies().get('authorization')?.value ?? '';
     const decoded = jwt.verify(token, process.env.JWT_SECRET!);
     const id = decoded.sub as string;
+    
     return id;
 }

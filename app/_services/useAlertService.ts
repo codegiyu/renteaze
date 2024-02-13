@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { create } from 'zustand';
 
 export { useAlertService };
@@ -33,6 +34,8 @@ function useAlertService(): IAlertService {
                 } else {
                     alert = undefined;
                 }
+
+                toast.dismiss();
     
                 return { alert };
             });

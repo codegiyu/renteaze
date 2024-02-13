@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 
 import { auth } from '@/app/_server/utils';
 import { Alert } from '@/components/Alert';
+import LoggedInUser from '@/components/LoggedInUser';
 
 export default Layout;
 
@@ -16,6 +17,7 @@ function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <Alert />
+            <LoggedInUser />
             {children}
         </>
     );

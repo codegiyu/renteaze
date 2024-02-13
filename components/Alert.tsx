@@ -19,13 +19,14 @@ function Alert() {
     }, [pathname]);
 
     useEffect(() => {
+        console.log({ alert });
+
         if (alert?.type === "alert-success") {
             toast.success(alert.message);
         } else if (alert?.type === "alert-danger") {
             toast.error(alert.message);
         } else {
             alertService.clear();
-            toast.dismiss();
         }
     }, [alert])
 
