@@ -15,7 +15,7 @@ const RoundedButton: React.FC<ColoredButtonProps> = ({
   textStyles = {},
   ...props
 }) => {
-  const className = "rounded-btn w-full " + colour;
+  const className = "rounded-btn w-full disabled:opacity-40 " + colour;
   const { width: btnWidth, height: btnHeight } = styles;
 
   if (link)

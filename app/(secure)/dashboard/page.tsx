@@ -1,15 +1,15 @@
 "use client";
 import MiniSidebar from "@/components/MiniSidebar";
 import React, { useRef, useState } from "react";
-import mail from "../../public/icons/email.svg";
-import alert from "../../public/icons/bell-alert.svg";
-import help from "../../public/icons/account-lock.svg";
-import power from "../../public/icons/power-standby.svg";
-import settings from "../../public/icons/cog.svg";
+import mail from "@/public/icons/email.svg";
+import alert from "@/public/icons/bell-alert.svg";
+import help from "@/public/icons/account-lock.svg";
+import power from "@/public/icons/power-standby.svg";
+import settings from "@/public/icons/cog.svg";
 // import { SideProps } from "@/componentTypes";
 import Image from "next/image";
-import profile from "../../public/icons/profile.png";
-import list from "../../public/icons/playlist-edit.svg";
+import profile from "@/public/icons/profile.png";
+import list from "@/public/icons/playlist-edit.svg";
 import EditInput from "@/components/forms/EditInput";
 import Select from "@/components/forms/Select";
 import { booleanCategory, propertyCategory } from "@/constants/generalData";
@@ -18,7 +18,7 @@ import RoundedButton from "@/components/buttons/RoundedButton";
 import ContactBar from "@/layout/ContactBar";
 import Input from "@/components/forms/Input";
 import OutlineButton from "@/components/buttons/OutlineButton";
-import addImg from "../../public/icons/add-img.svg";
+import addImg from "@/public/icons/add-img.svg";
 import UploadPhotoThumbnail from "@/components/UploadPhotoThumbnail";
 
 const sideLists = [

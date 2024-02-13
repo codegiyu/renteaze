@@ -1,4 +1,4 @@
-import { CSSProperties, HTMLInputTypeAttribute } from "react";
+import { CSSProperties, CSSStyleDeclaration, HTMLInputTypeAttribute } from "react";
 
 export {};
 
@@ -11,8 +11,8 @@ declare global {
     name?: string;
     value?: string;
     label?: string;
-    labelStyles?: CSSProperties;
-    inputStyles?: CSSProperties;
+    labelStyles?: CSSProperties | CSSStyleDeclaration;
+    inputStyles?: CSSProperties | CSSStyleDeclaration;
     changeHandler?: (e: React.ChangeEvent<T>) => void;
     blurHandler?: (e: React.FocusEvent<T>) => void;
     focusHandler?: (e: React.FocusEvent<T>) => void;
@@ -24,7 +24,7 @@ declare global {
     btnText?: string;
   }
 
-  interface GeneralButtonProps {
+  interface GeneralButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     type?: "button" | "submit" | "reset";
     fullWidth?: boolean;
     link?: string;
@@ -33,8 +33,8 @@ declare global {
     text: string;
     leftIcon?: string;
     rightIcon?: string;
-    styles?: CSSProperties;
-    textStyles?: CSSProperties;
+    styles?: CSSProperties | CSSStyleDeclaration;
+    textStyles?: CSSProperties | CSSStyleDeclaration;
   }
 
   interface InputProps
@@ -66,7 +66,7 @@ declare global {
     phoneValue: string;
     placeholder?: string;
     label?: string;
-    labelStyles?: CSSProperties;
+    labelStyles?: CSSProperties | CSSStyleDeclaration;
     changeHandler: (e: React.ChangeEvent<T>) => void;
     disabled?: boolean;
     errMsg?: string;
