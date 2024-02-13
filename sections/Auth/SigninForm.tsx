@@ -89,8 +89,8 @@ const SigninForm: React.FC = () => {
               type="text"
               value={values.password}
               changeHandler={handleChange}
-              placeholder="Enter your email address here"
-              label="Email Address"
+              placeholder="Enter your password"
+              label="Password"
             />
 
             <RoundedButton
