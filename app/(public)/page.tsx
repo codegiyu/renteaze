@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 import { useEffect } from "react";
 import Cta from "@/components/Cta";
 import Footer from "@/components/Footer";
@@ -9,16 +9,16 @@ import PropertyControls from "@/sections/HeroPage/PropertyControls";
 import { useUserService } from "../_services";
 
 export default function Home() {
-  const userService = useUserService();
-  const allUsers = userService.users;
+  // const userService = useUserService();
+  // const allUsers = userService.users;
 
-  useEffect(() => {
-    userService.getAll();
-  }, [])
+  // useEffect(() => {
+  //   userService.getAll();
+  // }, [])
 
-  useEffect(() => {
-    console.log({ allUsers });
-  }, [allUsers])
+  // useEffect(() => {
+  //   console.log({ allUsers });
+  // }, [allUsers])
 
   return (
     <MainLayout>

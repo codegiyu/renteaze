@@ -19,8 +19,8 @@ export const authBottomLinks: NavLinkProps[] = [
 
 export const mainNavLinks: NavLinkProps[] = [
     {
-        text: "Home",
-        path: "/"
+        text: "Dashboard",
+        path: "/dashboard"
     },
     {
         text: "Rent",

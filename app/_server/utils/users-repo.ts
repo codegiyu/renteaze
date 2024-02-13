@@ -46,6 +46,7 @@ async function getById(id: string) {
 async function getCurrent() {
     try {
         const currentUserId = headers().get('userId');
+        console.log({ currentUserId });
         return await User.findById(currentUserId);
     } catch {
         throw 'Current User Not Found';
