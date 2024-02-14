@@ -69,5 +69,39 @@ declare global {
     interface Utils {
         getStarArr: (rating: number) => [number, number, number, number, number];
     }
+
+
+    // Services Types and Interfaces
+    interface INewUser {
+        firstName: string,
+        lastName: string,
+        email: string,
+        password: string,
+        phone: string,
+        role: "Agent" | "Developer" | "Landlord" | "User"
+    }
+    
+    interface IUser extends INewUser {
+        _id: string,
+        isDeleting?: boolean
+    }
+    
+    interface IUserStore {
+        users?: IUser[],
+        user?: IUser,
+        currentUser?: IUser
+    }
+    
+    interface IUserService extends IUserStore {
+        login: (email: string, password: string) => Promise<void>,
+        logout: () => Promise<void>,
+        register: (user: INewUser) => Promise<void>,
+        getAll: () => Promise<void>,
+        getById: (id: string) => Promise<void>,
+        getCurrent: () => Promise<void>,
+        create: (user: INewUser) => Promise<void>,
+        update: (id: string, params: Partial<INewUser>) => Promise<void>,
+        delete: (id: string) => Promise<void>
+    }
 }
 // COMPONENT PROP TYPES
